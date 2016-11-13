@@ -1,0 +1,173 @@
+﻿<Window x:Class="TestApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TestApp"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525"
+        FontFamily="Seqoe UI Light" Background="DarkGray"
+        >
+    <Window.Resources>
+        <local:TimeBlockDataTemplateSelector x:Key="TimeBlockDataTemplateSelector">
+
+            <local:TimeBlockDataTemplateSelector.RegularBlockTemplate1>
+                <DataTemplate>
+                    <Border Margin="5,0"
+                    VerticalAlignment="Bottom" Height="{Binding LengthSeconds}" 
+                    >
+                        <Grid>
+                            <Rectangle RadiusX="3" RadiusY="3" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
+                                       Stroke="Black" StrokeThickness="1"
+                               Grid.RowSpan="3" Grid.ColumnSpan="2"/>
+                            <Grid Margin="4">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="1*"/>
+                                    <RowDefinition Height="auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+
+                                <StackPanel Orientation="Vertical" Grid.ColumnSpan="2">
+                                    <TextBlock Text="{Binding DateFrom}" />
+                                    <TextBlock Text="{Binding LengthFormatted}" />
+                                </StackPanel>
+                                <Button FontFamily="Segoe UI Emoji" Grid.Row="1" Grid.Column="0" Content="⇤" />
+                                <Button FontFamily="Segoe UI Emoji" Visibility="Hidden" Grid.Row="1" Grid.Column="1" Content="⇥" HorizontalAlignment="Right" />
+                                <Button FontFamily="Segoe UI Emoji" Grid.Row="2" Grid.ColumnSpan="2" Content="⛔" VerticalAlignment="Bottom" HorizontalAlignment="Right"/>
+                            </Grid>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+
+            </local:TimeBlockDataTemplateSelector.RegularBlockTemplate1>
+
+            <local:TimeBlockDataTemplateSelector.RegularBlockTemplate2>
+                <DataTemplate>
+                    <Border Margin="5,0"
+                    VerticalAlignment="Bottom" Height="{Binding LengthSeconds}" 
+                    >
+                        <Grid>
+                            <Rectangle RadiusX="3" RadiusY="3" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
+                                       Stroke="Black" StrokeThickness="1"
+                               Grid.RowSpan="3" Grid.ColumnSpan="2"/>
+                            <Grid Margin="4">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="1*"/>
+                                    <RowDefinition Height="auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+
+                                <StackPanel Orientation="Vertical" Grid.ColumnSpan="2">
+                                    <TextBlock Text="{Binding DateFrom}" />
+                                    <TextBlock Text="{Binding LengthFormatted}" />
+                                </StackPanel>
+                                <Button FontFamily="Segoe UI Emoji" Visibility="Hidden" Grid.Row="1" Grid.Column="0" Content="⇤" />
+                                <Button FontFamily="Segoe UI Emoji" Grid.Row="1" Grid.Column="1" Content="⇥" HorizontalAlignment="Right" />
+                                <Button FontFamily="Segoe UI Emoji" Grid.Row="2" Grid.ColumnSpan="2" Content="⛔" VerticalAlignment="Bottom" HorizontalAlignment="Right"/>
+                            </Grid>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+
+            </local:TimeBlockDataTemplateSelector.RegularBlockTemplate2>
+
+
+            <local:TimeBlockDataTemplateSelector.RegularBlockTemplate>
+                <DataTemplate>
+                    <Border Margin="5,0"
+                    VerticalAlignment="Bottom" Height="{Binding LengthSeconds}" 
+                    >
+                        <Grid>
+                            <Rectangle RadiusX="3" RadiusY="3" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
+                                       Stroke="Black" StrokeThickness="1"
+                               Grid.RowSpan="3" Grid.ColumnSpan="2"/>
+                            <Grid Margin="4">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto" />
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel Orientation="Vertical" Grid.ColumnSpan="2">
+                                <TextBlock Text="{Binding DateFrom}" />
+                                <TextBlock Text="{Binding LengthFormatted}" />
+                            </StackPanel>
+                            <Button FontFamily="Segoe UI Emoji" Grid.Row="1" Grid.Column="0" Content="⇤" />
+                            <Button FontFamily="Segoe UI Emoji" Grid.Row="1" Grid.Column="1" Content="⇥" HorizontalAlignment="Right" />
+                            <Button FontFamily="Segoe UI Emoji" Grid.Row="2" Grid.ColumnSpan="2" Content="⛔" VerticalAlignment="Bottom" HorizontalAlignment="Right"/>
+                        </Grid>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+
+            </local:TimeBlockDataTemplateSelector.RegularBlockTemplate>
+            <local:TimeBlockDataTemplateSelector.EmptyBlockTemplate>
+                <DataTemplate>
+                    <Border Margin="5,0"
+                    VerticalAlignment="Bottom" Height="{Binding LengthSeconds}" 
+                    >
+                        <Grid>
+                            <Rectangle RadiusX="3" RadiusY="3" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
+                                       Stroke="#FFF5F5F5" StrokeThickness="3" StrokeDashArray="5,2"
+                                       Grid.RowSpan="3" Grid.ColumnSpan="2"
+                                       />
+                            <Grid Margin="4">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto" />
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel Orientation="Vertical" Grid.ColumnSpan="2">
+                                <TextBlock Text="{Binding DateFrom}" />
+                                <TextBlock Text="{Binding LengthFormatted}" />
+                            </StackPanel>
+                        </Grid>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+
+            </local:TimeBlockDataTemplateSelector.EmptyBlockTemplate>
+        </local:TimeBlockDataTemplateSelector>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}" >
+                        <TextBlock Text="{TemplateBinding Content}" />
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <ScrollViewer HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Hidden">
+        
+        <ItemsControl ItemsSource="{Binding TimeBlocks}"
+                      ItemTemplateSelector="{StaticResource TimeBlockDataTemplateSelector}"
+                      >
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate >
+                    <VirtualizingStackPanel Orientation="Horizontal" Margin="3,10" >
+                        </VirtualizingStackPanel> 
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+        </ItemsControl>
+        </ScrollViewer>
+    </Grid>
+</Window>
